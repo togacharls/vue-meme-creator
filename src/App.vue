@@ -1,17 +1,16 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld/>
+    <Meme/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
+import Meme from './components/Meme'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Meme
   }
 }
 </script>
@@ -24,5 +23,10 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.meme-container{
+  left: 25%;
+  top: 25%;
+  width: 50%;
 }
 </style>
