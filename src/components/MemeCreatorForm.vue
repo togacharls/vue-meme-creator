@@ -47,6 +47,7 @@ export default {
   }
   input{
     display: block;
-    margin-bottom: 0.2em;
+    margin: 0.6em 33%;
+    width: 33%;
   }
 </style>

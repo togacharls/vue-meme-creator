@@ -10,15 +10,20 @@
 export default {
   name: 'Meme',
   props: ['above', 'below', 'img'],
+  data () {
+    return {
+      notFoundImg: 'http://thetechtemple.com/wp-content/themes/TechNews/images/img_not_available.jpg'
+    }
+  },
   computed: {
     aboveText () {
-      return this.above || 'Above Text'
+      return this.above || ''
     },
     belowText () {
-      return this.below || 'Below Text'
+      return this.below || ''
     },
     imgSrc () {
-      return this.img || 'https://www.pintzap.com/img/memes/list/11.jpg'
+      return this.img || this.notFoundImg
     }
   }
 }
@@ -35,12 +40,13 @@ img{
 }
 h1{
   position: absolute;
-  font-weight: normal;
+  font-weight: bold;
   color: #ffffff;
   z-index: 2;
   width: 100%;
+  font-size: 3em;
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
 }
-h1.above-text{}
 h1.below-text{
   bottom: 0em;
 }
