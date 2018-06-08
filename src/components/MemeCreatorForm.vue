@@ -1,8 +1,8 @@
 <template>
   <div class="meme-form-container">
-    <input v-model="form.img.value" :placeholder="form.img.placeholder">
-    <input v-model="form.above.value" :placeholder="form.above.placeholder">
-    <input v-model="form.below.value" :placeholder="form.below.placeholder">
+    <input v-model="form.img.value" :placeholder="form.img.placeholder" @change="onChangeForm">
+    <input v-model="form.above.value" :placeholder="form.above.placeholder" @change="onChangeForm">
+    <input v-model="form.below.value" :placeholder="form.below.placeholder" @change="onChangeForm">
   </div>
 </template>
 
@@ -25,6 +25,16 @@ export default {
           placeholder: 'Img src...'
         }
       }
+    }
+  },
+  methods: {
+    onChangeForm () {
+      let data = {
+        aboveText: this.form.above.value,
+        belowText: this.form.below.value,
+        imgSrc: this.form.img.value
+      }
+      this.$emit('memeCreatorFormChange', data)
     }
   }
 }

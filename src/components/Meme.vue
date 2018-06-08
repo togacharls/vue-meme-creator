@@ -9,11 +9,16 @@
 <script>
 export default {
   name: 'Meme',
-  data () {
-    return {
-      aboveText: 'Above Text',
-      belowText: 'Below Text',
-      imgSrc: 'https://www.pintzap.com/img/memes/list/11.jpg'
+  props: ['above', 'below', 'img'],
+  computed: {
+    aboveText () {
+      return this.above || 'Above Text'
+    },
+    belowText () {
+      return this.below || 'Below Text'
+    },
+    imgSrc () {
+      return this.img || 'https://www.pintzap.com/img/memes/list/11.jpg'
     }
   }
 }
