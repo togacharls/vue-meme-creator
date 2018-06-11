@@ -28,6 +28,16 @@ vue init webpack vue-meme-creator
 - Setup e2e tests with Nightwatch? `Yes`
 - Should we run npm install for you after the project has been created? (recommended) `npm`
 
+### Adding vuex
+For adding Vuex, we only have to add this library using npm
+```bash
+npm install vuex --save
+```
+As vuex uses Promise library we may need to install this dependency if our application is going to run in old browsers
+```bash
+npm install es6-promise --save
+```
+
 ## Build Setup
 #### install dependencies
 ``` bash
