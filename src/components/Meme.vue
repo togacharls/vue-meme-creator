@@ -12,6 +12,7 @@ export default {
   props: ['above', 'below', 'img'],
   data () {
     return {
+      validImg: false,
       notFoundImg: 'http://thetechtemple.com/wp-content/themes/TechNews/images/img_not_available.jpg'
     }
   },
@@ -23,7 +24,14 @@ export default {
       return this.below || ''
     },
     imgSrc () {
-      return this.img || this.notFoundImg
+      return this.validImg ? this.img : this.notFoundImg
+    }
+  },
+  watch: {
+    img (newVal, oldVal) {
+      if (newVal) {
+        this.$http.get(newVal).then(response => { this.validImg = true }, error => { this.validImg = false })
+      }
     }
   }
 }
