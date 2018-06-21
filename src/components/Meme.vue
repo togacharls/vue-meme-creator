@@ -1,49 +1,38 @@
 <template>
-  <div class="meme-container">
-    <h1 class="above-text">{{aboveText}}</h1>
-    <img :src="imgSrc"/>
-    <h1 class="below-text">{{belowText}}</h1>
+  <div id="meme">
+    <MemeImage/>
+    <MemeCreatorForm/>
   </div>
 </template>
 
 <script>
-import { store } from '../store/store'
+import MemeImage from '@/components/MemeImage'
+import MemeCreatorForm from '@/components/MemeCreatorForm'
+
 export default {
   name: 'Meme',
-  store,
-  computed: {
-    aboveText () {
-      return this.$store.getters.above
-    },
-    belowText () {
-      return this.$store.getters.below
-    },
-    imgSrc () {
-      return this.$store.getters.img
-    }
+  components: {
+    MemeImage,
+    MemeCreatorForm
   }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-.meme-container{
-  position: relative;
+<style>
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
 }
-img{
-  width: 100%;
+.meme-container{
+  top: 12.5%;
 }
-h1{
-  position: absolute;
-  font-weight: bold;
-  color: #ffffff;
-  z-index: 2;
-  width: 100%;
-  font-size: 3em;
-  text-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
-}
-h1.below-text{
-  bottom: 0em;
+.meme-container,
+.meme-form-container{
+  left: 25%;
+  width: 50%;
 }
 </style>
