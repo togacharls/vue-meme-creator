@@ -7,31 +7,19 @@
 </template>
 
 <script>
+import { store } from '../store/store'
 export default {
   name: 'Meme',
-  props: ['above', 'below', 'img'],
-  data () {
-    return {
-      validImg: false,
-      notFoundImg: 'http://thetechtemple.com/wp-content/themes/TechNews/images/img_not_available.jpg'
-    }
-  },
+  store,
   computed: {
     aboveText () {
-      return this.above || ''
+      return this.$store.getters.above
     },
     belowText () {
-      return this.below || ''
+      return this.$store.getters.below
     },
     imgSrc () {
-      return this.validImg ? this.img : this.notFoundImg
-    }
-  },
-  watch: {
-    img (newVal, oldVal) {
-      if (newVal) {
-        this.$http.get(newVal).then(response => { this.validImg = true }, error => { this.validImg = false })
-      }
+      return this.$store.getters.img
     }
   }
 }

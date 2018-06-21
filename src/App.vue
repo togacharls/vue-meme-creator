@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <Meme :img="memeConf.img" :above="memeConf.above" :below="memeConf.below"/>
-    <MemeCreatorForm @memeCreatorFormChange="onMemeCreatorFormChange"/>
+    <Meme/>
+    <MemeCreatorForm/>
   </div>
 </template>
 
@@ -14,22 +14,6 @@ export default {
   components: {
     Meme,
     MemeCreatorForm
-  },
-  data () {
-    return {
-      memeConf: {
-        img: '',
-        above: '',
-        below: ''
-      }
-    }
-  },
-  methods: {
-    onMemeCreatorFormChange (data) {
-      this.memeConf.img = data.imgSrc
-      this.memeConf.above = data.aboveText
-      this.memeConf.below = data.belowText
-    }
   }
 }
 </script>
