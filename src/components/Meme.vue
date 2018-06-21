@@ -1,5 +1,5 @@
 <template>
-  <div id="meme">
+  <div class="meme">
     <MemeImage/>
     <MemeCreatorForm/>
   </div>
@@ -32,7 +32,6 @@ export default {
 }
 .meme-container,
 .meme-form-container{
-  left: 25%;
-  width: 50%;
+  width: 80%;
 }
 </style>

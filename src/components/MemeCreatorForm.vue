@@ -45,12 +45,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  .meme-form-container{
-    position: absolute;
-  }
   input{
     display: block;
-    margin: 0.6em 33%;
-    width: 33%;
+    margin: 0.6em 10%;
+    width: 80%;
   }
 </style>

@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <Meme/>
+    <Meme/>
   </div>
 </template>
 
@@ -22,5 +23,9 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.meme{
+  display: inline-block;
+  width: 45%;
 }
 </style>
