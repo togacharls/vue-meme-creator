@@ -1,18 +1,19 @@
 <template>
-  <div id="app">
-    <Meme1/>
-    <Meme2/>
+  <div class="meme">
+    <MemeImage/>
+    <MemeCreatorForm/>
   </div>
 </template>
 
 <script>
-import Meme1 from '@/components/Meme1'
-import Meme2 from '@/components/Meme2'
+import MemeImage from '@/components/MemeImage'
+import MemeCreatorForm from '@/components/MemeCreatorForm'
+
 export default {
-  name: 'App',
+  name: 'Meme2',
   components: {
-    Meme1,
-    Meme2
+    MemeImage,
+    MemeCreatorForm
   }
 }
 </script>
@@ -26,8 +27,11 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
-.meme{
-  display: inline-block;
-  width: 45%;
+.meme-container{
+  top: 12.5%;
+}
+.meme-container,
+.meme-form-container{
+  width: 80%;
 }
 </style>

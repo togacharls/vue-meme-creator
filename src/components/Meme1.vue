@@ -10,7 +10,7 @@ import MemeImage from '@/components/MemeImage'
 import MemeCreatorForm from '@/components/MemeCreatorForm'
 
 export default {
-  name: 'Meme',
+  name: 'Meme1',
   components: {
     MemeImage,
     MemeCreatorForm
