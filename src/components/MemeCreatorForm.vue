@@ -1,43 +1,46 @@
 <template>
   <div class="meme-form-container">
-    <input :value="form.img.value" :placeholder="form.img.placeholder" @change="onChangeImg">
-    <input :value="form.above.value" :placeholder="form.above.placeholder" @change="onChangeAbove">
-    <input :value="form.below.value" :placeholder="form.below.placeholder" @change="onChangeBelow">
+    <input v-model="imgSrc" :placeholder="placeholders.img" @change="onChangeImg">
+    <input v-model="aboveText" :placeholder="placeholders.above" @change="onChangeAbove">
+    <input v-model="belowText" :placeholder="placeholders.below" @change="onChangeBelow">
   </div>
 </template>
 
 <script>
-import { store } from '@/store/store'
 export default {
   name: 'MemeCreatorForm',
-  store,
+  props: {
+    img: {
+      type: String
+    },
+    above: {
+      type: String
+    },
+    below: {
+      type: String
+    }
+  },
   data () {
     return {
-      form: {
-        above: {
-          value: this.$store.getters.above,
-          placeholder: 'Above text...'
-        },
-        below: {
-          value: this.$store.getters.below,
-          placeholder: 'Below text...'
-        },
-        img: {
-          value: this.$store.getters.img,
-          placeholder: 'Img src...'
-        }
+      imgSrc: this.img,
+      aboveText: this.above,
+      belowText: this.below,
+      placeholders: {
+        img: 'Img src...',
+        above: 'Above text...',
+        below: 'Below text...'
       }
     }
   },
   methods: {
     onChangeImg (e) {
-      this.$store.dispatch('updateImg', e.target.value)
+      this.$emit('change-img', e.target.value)
     },
     onChangeAbove (e) {
-      this.$store.dispatch('updateAbove', e.target.value)
+      this.$emit('change-above', e.target.value)
     },
     onChangeBelow (e) {
-      this.$store.dispatch('updateBelow', e.target.value)
+      this.$emit('change-below', e.target.value)
     }
   }
 }

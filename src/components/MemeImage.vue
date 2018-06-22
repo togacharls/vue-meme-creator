@@ -1,26 +1,18 @@
 <template>
   <div class="meme-container">
-    <h1 class="above-text">{{aboveText}}</h1>
-    <img :src="imgSrc"/>
-    <h1 class="below-text">{{belowText}}</h1>
+    <h1 class="above-text">{{above}}</h1>
+    <img :src="img"/>
+    <h1 class="below-text">{{below}}</h1>
   </div>
 </template>
 
 <script>
-import { store } from '@/store/store'
 export default {
   name: 'MemeImage',
-  store,
-  computed: {
-    aboveText () {
-      return this.$store.getters.above
-    },
-    belowText () {
-      return this.$store.getters.below
-    },
-    imgSrc () {
-      return this.$store.getters.img
-    }
+  props: {
+    img: String,
+    above: String,
+    below: String
   }
 }
 </script>
