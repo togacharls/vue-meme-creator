@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import Meme from './components/Meme'
-import MemeCreatorForm from './components/MemeCreatorForm'
+import Meme from '@/components/Meme'
+import MemeCreatorForm from '@/components/MemeCreatorForm'
 
 export default {
   name: 'App',
